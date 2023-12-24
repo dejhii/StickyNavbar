@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/45414b0e63.js" crossorigin="anonymous"></script>
+    <title>Responsive Sticky Navbar | CodingNepal</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="content">
+        <div class="logo"><a href="#">CodingNepal</a></div>
+        <ul class="menu-list">
+          <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">services</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="icon menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+
+    <div class="banner"></div>
+    <div class="about">
+      <div class="content">
+        <div class="title">Responsive Sticky Navigation Bar using HTML CSS & JavaScript</div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et quos distinctio, enim magni architecto delectus numquam repellat possimus reiciendis iste neque eligendi exercitationem asperiores labore deleniti nisi porro voluptas? Expedita doloremque non, magnam veniam, vel cupiditate repellendus recusandae et fugiat eligendi, nisi magni culpa deleniti corrupti nemo aspernatur aperiam. Fugit ab aliquid voluptatibus delectus, accusantium eum porro deserunt quisquam ullam cum vel aut dolor adipisci ipsa consequuntur impedit quis laudantium eos quidem nihil. Molestias voluptatibus excepturi atque officia quae sequi.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolorum facere possimus, omnis quisquam deserunt doloribus repellendus sed cupiditate similique vel dolore adipisci. Sed delectus repellat, ut quod laboriosam eligendi quas reiciendis tempora porro. Sit ea consectetur laudantium animi quas dolore quos temporibus sed eveniet, accusantium soluta maxime, impedit vel?</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat sequi eum mollitia inventore. Cum corporis accusantium inventore aspernatur vero quod suscipit quam molestiae iure eaque neque ipsa consequatur, repellat voluptatum error magni ad. Non necessitatibus quis tenetur assumenda, officiis soluta reprehenderit libero, commodi nesciunt blanditiis molestiae iure est vel consequatur?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus rem reprehenderit explicabo laboriosam voluptas illum debitis, eveniet minima dolorem numquam fuga doloribus ipsum obcaecati ea, molestias provident placeat tempora dolore suscipit quia, animi sint quaerat libero ratione! Cumque reprehenderit, facere nostrum dolorem recusandae nisi labore assumenda minus blanditiis voluptatum ipsa?</p>
+      </div>
+    </div>
+
+    <footer>Lorem ipsum dolor sit amet consectetur adipisicing elit.</footer>
+
+    <script>
+      const body = document.querySelector("body");
+      const navbar = document.querySelector(".navbar");
+      const menu = document.querySelector(".menu-list");
+      const menuBtn = document.querySelector(".menu-btn");
+      const cancelBtn = document.querySelector(".cancel-btn");
+      menuBtn.onclick = () => {
+        menu.classList.add("active");
+        menuBtn.classList.add("hide");
+        body.classList.add("disabledscroll");
+      }
+      cancelBtn.onclick = () => {
+        menu.classList.remove("active");
+        menuBtn.classList.remove("hide");
+        body.classList.remove("disabledscroll");
+      }
+
+      window.onscroll = ()=> {
+        this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+      }
+    </script>
+
+  </body>
+</html>
