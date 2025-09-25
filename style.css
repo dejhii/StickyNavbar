@@ -2,7 +2,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'poppins', sans-serif;
+  font-family: "poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .content {
@@ -10,7 +14,6 @@
   margin: auto;
   padding: 0px 30px;
 }
-
 
 .navbar {
   position: fixed;
@@ -81,10 +84,22 @@
   text-align: justify;
 }
 
+/* ✅ Plain text MENU and X buttons */
 .icon {
   color: #fff;
-  font-size: 20px;
+  font-size: 20px;       /* slightly bigger for X */
+  font-weight: 700;
+  background: none;
   cursor: pointer;
+  display: none;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: cyan;
+}
+
+.icon.hide {
   display: none;
 }
 
@@ -95,26 +110,23 @@
 }
 
 footer {
-    border: 1px solid black;
-    color: #fff;
-    background-color: black;
-    font-size: larger;
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    padding-top: 20px;
+  border: 1px solid black;
+  color: #fff;
+  background-color: black;
+  font-size: larger;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  padding-top: 20px;
 }
 
 @media (max-width: 868px) {
   body.disabledscroll {
-  overflow: hidden;
-}
+    overflow: hidden;
+  }
 
   .icon {
-    display: block;
-  }
-  .icon .hide {
-    display: none;
+    display: inline-block;
   }
 
   .navbar .menu-list {
@@ -130,13 +142,22 @@ footer {
     text-align: center;
     transition: all 0.3s ease;
   }
+
   .navbar .menu-list.active {
     left: 0%;
   }
+
   .navbar .menu-list li {
     margin-top: 45px;
   }
+
   .navbar .menu-list li a {
     font-size: 23px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .navbar .content {
+    max-width: 100%;
   }
 }
